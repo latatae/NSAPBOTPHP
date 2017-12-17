@@ -9,18 +9,30 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+		
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
-			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text
-			];
+			
+			if($text == 'ทำอะไรได้บ้าง'){
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => 'คำถามพื้นฐานตอนนี้ที่สามารถถามได้คือ 
+							1.พิมชื่อระบบที่คุณต้องการทราบละเอียด 
+							2.พิมคำว่า "Deploy Urgent DXC" เมื่อต้องการทราบ Process
+							'
+				];
+			}else{
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];	
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
