@@ -31,7 +31,8 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 					'type' => 'text',
-					'text' => $text
+					'text' => 'ฉันไม่เข้าใจคำถามของคุณ ??? ลองพิมพ์ว่า "ทำอะไรได้บ้าง" ซิ!!!'
+//					'text' => $text
 				];	
 			}
 
