@@ -21,12 +21,13 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 					'type' => 'text',
-					'text' => 'คำถามพื้นฐานตอนนี้ที่สามารถถามได้คือ 
-							1.พิมชื่อระบบที่คุณต้องการทราบละเอียด 
-							2.พิมคำว่า "Deploy Urgent DXC" เมื่อต้องการทราบ Process
-							'
+					'text' => 
+					'คำถามพื้นฐานตอนนี้ที่สามารถถามได้คือ 
+					1.พิมชื่อระบบที่คุณต้องการทราบละเอียด 
+					2.พิมคำว่า "Deploy Urgent DXC" เมื่อต้องการทราบ Process'
 				];
-			}else{
+			}
+			else{
 				// Build message to reply back
 				$messages = [
 					'type' => 'text',
